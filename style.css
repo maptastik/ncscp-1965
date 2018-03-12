@@ -1,0 +1,45 @@
+.title {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-family: "Proxima Nova", Montserrat, sans-serif;
+  text-align: right;
+  max-width: 600px;
+  z-index: 10001;
+  background-color: rgb(14,14,14);
+  background-color: rgba(14,14,14,0.6);
+  padding-right: 15px;
+  padding-left: 10px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+h1, h2, #opacity-control label {
+  font-weight: 100;
+  color: #fff;
+  line-height: 5px;
+  text-shadow: 0 0 0.2em #000;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1em;
+}
+h2 a {
+  color: #f1c40f;
+}
+
+#opacity-control {
+  width: 100%;
+}
+#opacity-control label {
+  text-align: center;
+  font-size: 10px;
+  padding-bottom: 4px;
+}
+#opacity-control input.ui-slider-input {
+  display: none !important;
+}
+.ui-slider-track {
+  margin: 0 5px 0 10px;
+}
