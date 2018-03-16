@@ -27,7 +27,7 @@
     <layer-tree-layer source="crs='EPSG:2264' format='PNG32' layer='0' url='https://maps.wakegov.com/arcgis/rest/services/Property/Parcels/MapServer/'" expanded="0" checked="Qt::Unchecked" providerKey="mapserver" id="Property_856e4854_d979_4c43_84e7_10553c1c5e20" name="Property">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="../../elu1965_img.gpkg" expanded="1" checked="Qt::Checked" providerKey="gdal" id="elu1965_img_e86e328c_4823_44ee_80d3_3bbe6e809bcc" name="elu1965_img">
+    <layer-tree-layer source="../../elu1965_img.gpkg" expanded="1" checked="Qt::Unchecked" providerKey="gdal" id="elu1965_img_e86e328c_4823_44ee_80d3_3bbe6e809bcc" name="elu1965_img">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer source="../../Downloads/Parcels/Parcels.shp" expanded="1" checked="Qt::Unchecked" providerKey="ogr" id="Parcels_65e07459_5efd_4d33_a09c_323b7f4982b3" name="Parcels">
@@ -100,9 +100,9 @@
         <legendlayerfile visible="0" isInOverview="0" layerid="Property_856e4854_d979_4c43_84e7_10553c1c5e20"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" drawingOrder="-1" open="true" name="elu1965_img">
+    <legendlayer showFeatureCount="0" checked="Qt::Unchecked" drawingOrder="-1" open="true" name="elu1965_img">
       <filegroup hidden="false" open="true">
-        <legendlayerfile visible="1" isInOverview="0" layerid="elu1965_img_e86e328c_4823_44ee_80d3_3bbe6e809bcc"/>
+        <legendlayerfile visible="0" isInOverview="0" layerid="elu1965_img_e86e328c_4823_44ee_80d3_3bbe6e809bcc"/>
       </filegroup>
     </legendlayer>
     <legendlayer showFeatureCount="0" checked="Qt::Unchecked" drawingOrder="-1" open="true" name="Parcels">
