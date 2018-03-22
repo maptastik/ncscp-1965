@@ -1,6 +1,6 @@
 var map = L.map('map',{
       minZoom: 13,
-      maxZoom: 19
+      maxZoom: 20
     })
     .setView([35.780310,-78.639123], 15);
 
@@ -12,7 +12,12 @@ var map = L.map('map',{
 // 	ext: 'png'
 // }).addTo(map);
 
-tileLayer = L.tileLayer('https://api.mapbox.com/styles/v1/maptastik/cjez077k42lak2rs48w2rvgpw/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwdGFzdGlrIiwiYSI6IjNPMkREV1kifQ.2KGPFZD0QaGfvYzXYotTXQ')
+tileLayer = L.tileLayer('https://api.mapbox.com/styles/v1/maptastik/cjez077k42lak2rs48w2rvgpw/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwdGFzdGlrIiwiYSI6IjNPMkREV1kifQ.2KGPFZD0QaGfvYzXYotTXQ',
+  {
+    maxZoom: 20,
+    maxNativeZoom: 18
+  }
+)
 tileLayer.addTo(map)
 function getColor(d) {
     return d == 1 ? '#64824e' :
@@ -36,6 +41,12 @@ function getClassification(c) {
                     'Not Classified';
 }
 
+// See MDN https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+function precisionRound(number, precision) {
+    var factor = Math.pow(10, precision);
+    return Math.round(number * factor) / factor;
+}
+
 function zoomToFeature(e) {
     map.flyToBounds(e.target.getBounds());
 }
@@ -56,7 +67,8 @@ tileLayer.on('load', function(){
       },
       onEachFeature: function (feature, layer) {
         var classification = getClassification(feature.properties.landuse)
-        layer.bindPopup(classification);
+        var acres = precisionRound(feature.properties.acres, 2);
+        layer.bindPopup('<b>Land Use: </b>' + classification + '<br><b>Acres: </b>' + acres);
         layer.on({
           click: zoomToFeature
         })
